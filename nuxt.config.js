@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -17,6 +19,22 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
+  },
+
+  generate: {
+    async routes() {
+      const pages = await axios
+        .get('https://aeb.microcms.io/api/v1/portfolio2?limit=100', {
+          headers: { 'X-API-KEY': '1fe856c3-88c1-4ba1-9b78-c2c4572d3b81' }
+        })
+        .then((res) =>
+          res.data.contents.map((content) => ({
+            route: `/${content.id}`,
+            payload: content
+          }))
+        )
+      return pages
+    }
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
