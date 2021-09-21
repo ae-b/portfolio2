@@ -14,13 +14,16 @@ export default {
   async asyncData() {
     const { data } = await axios.get(
       // your-service-id部分は自分のサービスidに置き換えてください
-      'https://aeb.microcms.io/api/v1/portfolio2',
+      process.env.SERVICE_DOMAIN ,
       {
         // your-api-key部分は自分のapi-keyに置き換えてください
-        headers: { 'X-API-KEY': '1fe856c3-88c1-4ba1-9b78-c2c4572d3b81' }
+        headers: { 'X-API-KEY': process.env.API_KEY }
       }
     )
     return data
+  },
+  mounted() {
+    console.log(process.env.MESSAGE)
   }
 }
 </script>
