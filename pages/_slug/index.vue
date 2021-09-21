@@ -12,9 +12,9 @@ import axios from 'axios'
 export default {
   async asyncData({ params }) {
     const { data } = await axios.get(
-      `https://aeb.microcms.io/api/v1/portfolio2/${params.slug}`,
+      process.env.SERVICE_DOMAIN + '/' + params.slug ,
       {
-        headers: { 'X-API-KEY': '1fe856c3-88c1-4ba1-9b78-c2c4572d3b81' }
+        headers: { 'X-API-KEY': process.env.API_KEY }
       }
     )
     return data

@@ -24,8 +24,8 @@ export default {
   generate: {
     async routes() {
       const pages = await axios
-        .get('https://aeb.microcms.io/api/v1/portfolio2?limit=100', {
-          headers: { 'X-API-KEY': '1fe856c3-88c1-4ba1-9b78-c2c4572d3b81' }
+        .get( process.env.SERVICE_DOMAIN + '?limit=100', {
+          headers: { 'X-API-KEY': process.env.API_KEY }
         })
         .then((res) =>
           res.data.contents.map((content) => ({
