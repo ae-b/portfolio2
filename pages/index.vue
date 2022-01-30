@@ -1,11 +1,15 @@
 <template>
-  <ul>
-    <li v-for="content in contents" :key="content.id">
-      <nuxt-link :to="`/${content.id}`">
-        {{ content.title }}
-      </nuxt-link>
-    </li>
-  </ul>
+  <div>
+    <nav>
+      <ul class="content-area">
+        <li v-for="content in contents" :key="content.id">
+          <nuxt-link :to="`/${content.id}`">
+            {{ content.title }}
+          </nuxt-link>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </template>
 
 <script>
@@ -22,3 +26,34 @@ export default {
   }
 }
 </script>
+
+<style>
+div {
+  height: 80vh;
+}
+
+.content-area li {
+  /* 横並びにする */
+  float: left;
+  /* 余白 */
+  margin: 0 80px;
+  /* アンダーラインを引く */
+  border-bottom: 5px solid rgb(51, 50, 50);
+  padding-bottom: 1px;
+  display: inline;
+  line-height: 1.5;
+}
+
+a {
+  /* 文字関係 */
+  font-size: 80px;
+  color: rgb(51, 50, 50);
+}
+
+.content-area:after {
+  /* float leftによる回り込み解除 */
+  content: "";
+  display: block;
+  clear: both;
+}
+</style>
