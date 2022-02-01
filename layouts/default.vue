@@ -1,9 +1,9 @@
 <template>
 <body>
   <div>
-    <TheHeader>
-      <NuxtLink to="/"><img src="~assets/K2.png" alt="top" class="logo"></NuxtLink>
-    </TheHeader>
+    <header>
+      <a href="/"><img style="vertical-align:bottom" src="~assets/K2.png" alt="top" class="logo"></a>
+    </header>
     <Nuxt />
     <footer>
       <small>portfolio create by ae__b_ photo by sho</small>
@@ -16,6 +16,11 @@ export default {
 }
 </script>
 <style>
+
+a {
+  height: 40px;
+  width: 40px;
+}
 
 body {
     height: 100vh;

@@ -1,17 +1,12 @@
 <template>
-  <div class="content-area">
+  <div>
     <nav>
       <ul class="content-link">
-        <li v-for="content in contents" :key="content.id">
+        <!-- <li v-for="content in contents" :key="content.id">
           <nuxt-link :to="`/${content.id}`">
             {{ content.title }}
           </nuxt-link>
-        </li>
-
-        <!-- <li><a href="/profile">Profile</a></li>
-        <li><a href="/skiill">Skiill</a></li>
-        <li><a href="/works">Works</a></li>
-        <li><a href="/contact">Contact</a></li> -->
+        </li> -->
       </ul>
     </nav>
   </div>
@@ -27,7 +22,6 @@ export default {
         headers: { 'X-API-KEY': process.env.API_KEY }
       }
     )
-    console.log('content: ', data)
     return data
   }
 }
