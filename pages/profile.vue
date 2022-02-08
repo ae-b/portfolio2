@@ -1,14 +1,8 @@
 <template>
-  <div>
-    <nav>
-      <ul class="content-link">
-        <!-- <li v-for="content in contents" :key="content.id">
-          <nuxt-link :to="`/${content.id}`">
-            {{ content.title }}
-          </nuxt-link>
-        </li> -->
-      </ul>
-    </nav>
+  <div id="wrap">
+    <div class="">
+      <span v-html="body"></span>
+    </div>
   </div>
 </template>
 
@@ -22,7 +16,11 @@ export default {
         headers: { 'X-API-KEY': process.env.API_KEY }
       }
     )
-    return data
+    let body
+    data.contents.forEach(c => {
+      if (c.id == 'profile') body = { body: c.body }
+    })
+    return body
   }
 }
 </script>
