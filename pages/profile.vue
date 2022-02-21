@@ -9,6 +9,7 @@
 <script>
 import axios from 'axios'
 export default {
+  // 各ページで必要なものだけ取得する
   async asyncData() {
     const { data } = await axios.get(
       process.env.SERVICE_DOMAIN ,
