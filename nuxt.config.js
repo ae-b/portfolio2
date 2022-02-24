@@ -74,7 +74,6 @@ export default {
       serviceDomain: process.env.SERVICE_DOMAIN, // YOUR_DOMAIN is the XXXX part of XXXX.microcms.io
       apiKey: process.env.API_KEY,
     },
-    mode: process.env.NODE_ENV === 'production' ? 'server' : 'all',
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
