@@ -15,14 +15,13 @@
 <script>
 import axios from 'axios'
 export default {
-  async asyncData() {
-    const { data } = await axios.get(
-      process.env.SERVICE_DOMAIN ,
-      {
-        headers: { 'X-API-KEY': process.env.API_KEY }
-      }
-    )
-    return data
+  async asyncData({ $microcms }) {
+    const data = await $microcms.get({
+      endpoint: 'portfolio2',
+      queries: { fields: 'title,id' },
+    });
+    console.log(data)
+    return data;
   }
 }
 </script>

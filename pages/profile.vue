@@ -1,5 +1,6 @@
 <template>
-  <div id="wrap">
+  <div>
+    <h2>{{ id }}</h2>
     <div class="">
       <span v-html="body"></span>
     </div>
@@ -10,18 +11,12 @@
 import axios from 'axios'
 export default {
   // 各ページで必要なものだけ取得する
-  async asyncData() {
-    const { data } = await axios.get(
-      process.env.SERVICE_DOMAIN ,
-      {
-        headers: { 'X-API-KEY': process.env.API_KEY }
-      }
-    )
-    let body
-    data.contents.forEach(c => {
-      if (c.id == 'profile') body = { body: c.body }
-    })
-    return body
+  async asyncData({ $microcms }) {
+    const data = await $microcms.get({
+      endpoint: 'portfolio2',
+      contentId: 'profile',
+    });
+    return data;
   }
 }
 </script>
