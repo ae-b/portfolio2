@@ -26,22 +26,6 @@ export default {
     ]
   },
 
-  generate: {
-    async routes() {
-      const pages = await axios
-        .get( process.env.SERVICE_DOMAIN + '?limit=100', {
-          headers: { 'X-API-KEY': process.env.API_KEY }
-        })
-        .then((res) =>
-          res.data.contents.map((content) => ({
-            route: `/${content.id}`,
-            payload: content
-          }))
-        )
-      return pages
-    }
-  },
-
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
   ],
