@@ -1,7 +1,9 @@
 <template>
   <div>
-    <h2>{{ id }}</h2>
-    <div class="">
+    <div class="common-title clearfix">
+      {{ "       " + id }}
+    </div>
+    <div class="body-text">
       <span v-html="body"></span>
     </div>
   </div>
@@ -20,18 +22,40 @@ export default {
   }
 }
 </script>
-
 <style>
-div {
-  height: 80vh;
+
+html,body{
+  /* TOPページではスクロールさせない */
+  overflow: hidden
 }
+
+.common-title {
+  /* 文字関係 */
+  font-size: 50px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.body-text {
+  font-size: 30px;
+}
+
+</style>
+
+<!--
+
 
 .content-area {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-
 
 .content-link li {
   /* 横並びにする */
@@ -58,3 +82,4 @@ a {
   clear: both;
 }
 </style>
+-->
