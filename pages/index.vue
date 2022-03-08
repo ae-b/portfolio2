@@ -13,14 +13,12 @@
 </template>
 
 <script>
-import axios from 'axios'
 export default {
   async asyncData({ $microcms }) {
     const data = await $microcms.get({
       endpoint: 'portfolio2',
       queries: { fields: 'title,id' },
     });
-    console.log(data)
     return data;
   }
 }
@@ -37,11 +35,9 @@ html,body{
 .content-area {
   /* 箱自体の高さ */
   height: 80vh;
-  /* ここは画像配置してから細かいところ決める */
-  /* https://ics.media/entry/17522/#:~:text=%E3%82%92%E7%A2%BA%E8%AA%8D%E3%81%99%E3%82%8B-,CSS%20Grid%E3%82%92%E4%BD%BF%E3%81%86%E3%81%A82%E8%A1%8C,-CSS%20Grid%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88 */
+  /* コンテンツの位置 */
   display: grid;
   place-items: center;
-  /* ここまで */
 }
 
 .content-link li a {
