@@ -14,6 +14,7 @@
       <Nuxt />
       <Footer />
     </div>
+
   </body>
 </template>
 <script>

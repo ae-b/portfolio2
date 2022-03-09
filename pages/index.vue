@@ -1,6 +1,6 @@
 <template>
   <div class="content-area">
-    <nav>
+    <!-- <nav>
       <ul class="content-link">
         <li v-for="content in contents" :key="content.id">
           <nuxt-link :to="`/${content.id}`">
@@ -8,8 +8,31 @@
           </nuxt-link>
         </li>
       </ul>
-    </nav>
+    </nav> -->
+    <!-- スクロールテスト
+        divタグはひとつじゃないと怒られる　https://qiita.com/yutoun/items/d72a5d3d3f7361e1cec3
+    -->
+    <main>
+
+      <section id="box1" class="box" data-section-name="Area1"><!--data-section-nameはページネーションを表示させた際、現在地に現れるテキスト-->
+      <h2>Area1</h2>
+      <!--/box--></section>
+
+      <section id="box2" class="box" data-section-name="Area2">
+      <h2>Area2</h2>
+      <!--/box--></section>
+
+      <section id="box3" class="box" data-section-name="Area3">
+      <h2>Area3</h2>
+      <!--/box--></section>
+
+    </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.min.js"></script>
+    <!--自作のJS-->
+    <script src="js/6-1.js"></script>
   </div>
+
 </template>
 
 <script>

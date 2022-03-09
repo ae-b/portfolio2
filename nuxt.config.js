@@ -1,5 +1,3 @@
-import axios from 'axios'
-
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -28,6 +26,8 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    // https://cly7796.net/blog/javascript/set-the-css-to-apply-to-the-entire-page-in-nuxt-js/
+    '~assets/css/6-1.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
