@@ -16,6 +16,11 @@ export default {
       contentId: 'profile',
     });
     return data;
+  },
+  head: {
+    bodyAttrs: {
+      class: 'body-profile'
+    }
   }
 }
 </script>
@@ -24,6 +29,18 @@ export default {
 html,body{
   /* TOPページではスクロールさせない */
   overflow: hidden
+}
+
+.body-profile {
+  font-family: 'Roboto Condensed', sans-serif;
+  min-height:100vh;
+  /* https://jajaaan.co.jp/css/css-full-screen/ */
+
+  background-image: url(~assets/profile.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .body-text {

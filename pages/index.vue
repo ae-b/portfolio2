@@ -1,6 +1,6 @@
 <template>
   <div class="content-area">
-    <!-- <nav>
+    <nav>
       <ul class="content-link">
         <li v-for="content in contents" :key="content.id">
           <nuxt-link :to="`/${content.id}`">
@@ -8,29 +8,7 @@
           </nuxt-link>
         </li>
       </ul>
-    </nav> -->
-    <!-- スクロールテスト
-        divタグはひとつじゃないと怒られる　https://qiita.com/yutoun/items/d72a5d3d3f7361e1cec3
-    -->
-    <main>
-
-      <section id="box1" class="box" data-section-name="Area1"><!--data-section-nameはページネーションを表示させた際、現在地に現れるテキスト-->
-      <h2>Area1</h2>
-      <!--/box--></section>
-
-      <section id="box2" class="box" data-section-name="Area2">
-      <h2>Area2</h2>
-      <!--/box--></section>
-
-      <section id="box3" class="box" data-section-name="Area3">
-      <h2>Area3</h2>
-      <!--/box--></section>
-
-    </main>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.min.js"></script>
-    <!--自作のJS-->
-    <script src="js/6-1.js"></script>
+    </nav>
   </div>
 
 </template>
@@ -43,6 +21,11 @@ export default {
       queries: { fields: 'title,id' },
     });
     return data;
+  },
+  head: {
+    bodyAttrs: {
+      class: 'body-index'
+    }
   }
 }
 </script>
@@ -53,6 +36,18 @@ html,body{
   /* TOPページではスクロールさせない */
   /* https://qumeru.com/magazine/278#:~:text=Photo%20byPexels-,CSS%E3%81%A7%E7%94%BB%E9%9D%A2%E3%82%92%E3%82%B9%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%AB%E3%81%95%E3%81%9B%E3%81%AA%E3%81%84%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95,-CSS%E3%81%A7%E7%94%BB%E9%9D%A2 */
   overflow: hidden
+}
+
+.body-index {
+  font-family: 'Roboto Condensed', sans-serif;
+  min-height:100vh;
+  /* https://jajaaan.co.jp/css/css-full-screen/ */
+
+  background-image: url(~assets/tanigawa.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .content-area {

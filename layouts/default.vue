@@ -39,17 +39,6 @@ export default {
 </script>
 
 <style>
-body {
-  font-family: 'Roboto Condensed', sans-serif;
-  min-height:100vh;
-  /* https://jajaaan.co.jp/css/css-full-screen/ */
-
-  background-image: url(~assets/tanigawa.jpg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  background-size: cover;
-}
 
 .default {
   margin: 16px;

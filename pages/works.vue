@@ -13,9 +13,14 @@ export default {
   async asyncData({ $microcms }) {
     const data = await $microcms.get({
       endpoint: 'portfolio2',
-      contentId: 'profile',
+      contentId: 'works',
     });
     return data;
+  },
+  head: {
+    bodyAttrs: {
+      class: 'body-works'
+    }
   }
 }
 </script>
@@ -24,6 +29,18 @@ export default {
 html,body{
   /* TOPページではスクロールさせない */
   overflow: hidden
+}
+
+.body-works {
+  font-family: 'Roboto Condensed', sans-serif;
+  min-height:100vh;
+  /* https://jajaaan.co.jp/css/css-full-screen/ */
+
+  background-image: url(~assets/works.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .body-text {
