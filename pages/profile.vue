@@ -32,16 +32,29 @@ html,body{
 }
 
 .body-profile {
-  font-family: 'Roboto Condensed', sans-serif;
-  min-height:100vh;
-  /* https://jajaaan.co.jp/css/css-full-screen/ */
-
-  background-image: url(~assets/profile.jpg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  background-size: cover;
+  width: 50%;
+  height: 100%;
+  margin: 0px 0px 0px 50%;
 }
+
+.body-profile::before {
+  content: '';
+  width: 50%;
+  height: 100%;
+  background-image: url(~assets/profile.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+/*
+.body-profile::after {
+  content: '';
+  background-color: rgba(0, 0, 0, 0.5);
+} */
 
 .body-text {
   font-size: 30px;
